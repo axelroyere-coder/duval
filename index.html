@@ -3,400 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Duval Couverture - Expert en couverture, zinguerie et rénovation de toiture dans l'Eure (27). Service professionnel et devis gratuit.">
-    <title>Duval Couverture 27 | Expert en Couverture et Zinguerie dans l'Eure</title>
+    <meta name="description" content="Duval Couverture - Expert en couverture, zinguerie et rénovation dans l'Eure. Plus de 25 ans d'expérience, garantie décennale.">
+    <title>Duval Couverture 27 | Expert Couverture & Zinguerie dans l'Eure</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header / Navigation -->
-    <header class="header" id="header">
-        <nav class="nav container">
-            <div class="nav__logo">
-                <h2>DUVAL<span class="highlight">COUVERTURE</span></h2>
-                <p class="nav__subtitle">Expert depuis 1995</p>
-            </div>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">DUVAL<span>COUVERTURE</span></a>
 
-            <div class="nav__menu" id="nav-menu">
-                <ul class="nav__list">
-                    <li class="nav__item">
-                        <a href="#accueil" class="nav__link active">Accueil</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#services" class="nav__link">Services</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#realisations" class="nav__link">Réalisations</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#apropos" class="nav__link">À Propos</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#contact" class="nav__link">Contact</a>
-                    </li>
-                </ul>
-                <div class="nav__close" id="nav-close">
-                    <i class="icon-close">✕</i>
-                </div>
-            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link active">Accueil</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="a-propos.html" class="nav-link">À Propos</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="contact.html" class="btn btn-primary">Devis Gratuit</a></li>
+            </ul>
 
-            <div class="nav__toggle" id="nav-toggle">
-                <i class="icon-menu">☰</i>
-            </div>
-        </nav>
-    </header>
+            <div class="nav-toggle" id="nav-toggle">☰</div>
+        </div>
+    </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="accueil">
-        <div class="hero__overlay"></div>
-        <div class="hero__content container">
-            <h1 class="hero__title">
-                Votre Expert en <span class="highlight">Couverture</span> dans l'Eure
-            </h1>
-            <p class="hero__description">
-                Plus de 25 ans d'expérience au service de votre toiture. Professionnalisme, qualité et garantie décennale.
-            </p>
-            <div class="hero__buttons">
-                <a href="#contact" class="btn btn--primary">Devis Gratuit</a>
-                <a href="#services" class="btn btn--secondary">Nos Services</a>
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content animate-fadeInUp">
+                <p class="hero-subtitle">Expert Depuis 1995</p>
+                <h1 class="hero-title">Votre Spécialiste en<br><span class="gradient-text">Couverture & Zinguerie</span></h1>
+                <p class="hero-description">
+                    Plus de 25 ans d'expérience au service de votre toiture dans tout le département de l'Eure.
+                    Garantie décennale, devis gratuit, intervention rapide.
+                </p>
+                <div class="hero-buttons">
+                    <a href="contact.html" class="btn btn-primary">Demander un Devis</a>
+                    <a href="services.html" class="btn btn-outline">Nos Services</a>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">25+</span>
+                        <p class="stat-label">Années d'expérience</p>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">500+</span>
+                        <p class="stat-label">Projets réalisés</p>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <p class="stat-label">Clients satisfaits</p>
+                    </div>
+                </div>
             </div>
-            <div class="hero__features">
-                <div class="hero__feature">
-                    <div class="feature__icon">✓</div>
-                    <p>Garantie Décennale</p>
-                </div>
-                <div class="hero__feature">
-                    <div class="feature__icon">✓</div>
-                    <p>Devis Gratuit</p>
-                </div>
-                <div class="hero__feature">
-                    <div class="feature__icon">✓</div>
-                    <p>Intervention Rapide</p>
-                </div>
-            </div>
-        </div>
-        <div class="hero__scroll">
-            <a href="#services" class="scroll__link">
-                <span>Découvrir</span>
-                <div class="scroll__arrow">↓</div>
-            </a>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="services section" id="services">
+    <!-- Services Overview -->
+    <section class="section">
         <div class="container">
-            <div class="section__header">
-                <span class="section__subtitle">Notre Expertise</span>
-                <h2 class="section__title">Nos Services</h2>
-                <p class="section__description">
+            <div style="text-align: center; max-width: 700px; margin: 0 auto 4rem;">
+                <p style="color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem;">Notre Expertise</p>
+                <h2 style="font-size: 3rem; margin-bottom: 1rem;">Nos Services</h2>
+                <p style="font-size: 1.125rem; color: var(--gray-600);">
                     Des solutions complètes pour tous vos besoins en couverture et zinguerie
                 </p>
             </div>
 
-            <div class="services__grid">
-                <div class="service__card">
-                    <div class="service__icon">🏠</div>
-                    <h3 class="service__title">Couverture</h3>
-                    <p class="service__description">
+            <div class="grid grid-4">
+                <a href="couverture.html" class="card">
+                    <div class="card-icon">🏠</div>
+                    <h3 class="card-title">Couverture</h3>
+                    <p class="card-description">
                         Installation et rénovation de toiture en tuiles, ardoises ou zinc. Travaux neufs et réfection complète.
                     </p>
-                    <ul class="service__list">
-                        <li>Pose de tuiles mécaniques</li>
-                        <li>Ardoise naturelle et fibro-ciment</li>
-                        <li>Couverture zinc et bac acier</li>
-                        <li>Réfection de toiture</li>
-                    </ul>
-                </div>
+                </a>
 
-                <div class="service__card">
-                    <div class="service__icon">💧</div>
-                    <h3 class="service__title">Zinguerie</h3>
-                    <p class="service__description">
+                <a href="zinguerie.html" class="card">
+                    <div class="card-icon">💧</div>
+                    <h3 class="card-title">Zinguerie</h3>
+                    <p class="card-description">
                         Travaux de zinguerie pour une évacuation optimale des eaux pluviales et une protection durable.
                     </p>
-                    <ul class="service__list">
-                        <li>Gouttières et chéneaux</li>
-                        <li>Descentes d'eau pluviale</li>
-                        <li>Noues et solins</li>
-                        <li>Habillage et bardage zinc</li>
-                    </ul>
-                </div>
+                </a>
 
-                <div class="service__card">
-                    <div class="service__icon">🔧</div>
-                    <h3 class="service__title">Rénovation</h3>
-                    <p class="service__description">
+                <a href="renovation.html" class="card">
+                    <div class="card-icon">🔧</div>
+                    <h3 class="card-title">Rénovation</h3>
+                    <p class="card-description">
                         Rénovation complète de votre toiture avec isolation thermique et traitement de charpente.
                     </p>
-                    <ul class="service__list">
-                        <li>Isolation de toiture</li>
-                        <li>Traitement de charpente</li>
-                        <li>Démoussage et nettoyage</li>
-                        <li>Réparation fuites</li>
-                    </ul>
-                </div>
+                </a>
 
-                <div class="service__card">
-                    <div class="service__icon">🪟</div>
-                    <h3 class="service__title">Fenêtres de Toit</h3>
-                    <p class="service__description">
-                        Installation de fenêtres de toit Velux pour apporter lumière naturelle et confort.
+                <a href="velux.html" class="card">
+                    <div class="card-icon">🪟</div>
+                    <h3 class="card-title">Fenêtres de Toit</h3>
+                    <p class="card-description">
+                        Installation de fenêtres de toit Velux pour apporter lumière naturelle et confort à vos combles.
                     </p>
-                    <ul class="service__list">
-                        <li>Pose de Velux</li>
-                        <li>Fenêtres de toit panoramiques</li>
-                        <li>Volets roulants</li>
-                        <li>Remplacement et SAV</li>
-                    </ul>
-                </div>
+                </a>
+            </div>
 
-                <div class="service__card">
-                    <div class="service__icon">⚡</div>
-                    <h3 class="service__title">Dépannage Urgent</h3>
-                    <p class="service__description">
-                        Intervention rapide pour tous vos problèmes de toiture. Disponible 7j/7 pour les urgences.
-                    </p>
-                    <ul class="service__list">
-                        <li>Réparation de fuites</li>
-                        <li>Tuiles envolées</li>
-                        <li>Dégâts tempête</li>
-                        <li>Bâchage d'urgence</li>
-                    </ul>
-                </div>
-
-                <div class="service__card">
-                    <div class="service__icon">🏢</div>
-                    <h3 class="service__title">Professionnel</h3>
-                    <p class="service__description">
-                        Solutions pour professionnels et collectivités. Grands chantiers et suivi personnalisé.
-                    </p>
-                    <ul class="service__list">
-                        <li>Bâtiments industriels</li>
-                        <li>Copropriétés</li>
-                        <li>Collectivités locales</li>
-                        <li>Entreprises</li>
-                    </ul>
-                </div>
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="services.html" class="btn btn-primary">Découvrir Tous Nos Services</a>
             </div>
         </div>
     </section>
 
-    <!-- Realisations Section -->
-    <section class="realisations section section--dark" id="realisations">
+    <!-- Why Choose Us -->
+    <section class="section" style="background: var(--white);">
         <div class="container">
-            <div class="section__header">
-                <span class="section__subtitle">Notre Travail</span>
-                <h2 class="section__title">Nos Réalisations</h2>
-                <p class="section__description">
-                    Découvrez quelques-uns de nos projets récents
-                </p>
-            </div>
-
-            <div class="realisations__grid">
-                <div class="realisation__card">
-                    <div class="realisation__image">
-                        <div class="realisation__placeholder">
-                            <span class="placeholder__icon">🏠</span>
-                        </div>
-                    </div>
-                    <div class="realisation__content">
-                        <h3 class="realisation__title">Rénovation Complète</h3>
-                        <p class="realisation__location">Évreux - Maison individuelle</p>
-                        <p class="realisation__description">Réfection totale en tuiles mécaniques avec isolation renforcée</p>
-                    </div>
-                </div>
-
-                <div class="realisation__card">
-                    <div class="realisation__image">
-                        <div class="realisation__placeholder">
-                            <span class="placeholder__icon">🏢</span>
-                        </div>
-                    </div>
-                    <div class="realisation__content">
-                        <h3 class="realisation__title">Couverture Bac Acier</h3>
-                        <p class="realisation__location">Vernon - Bâtiment industriel</p>
-                        <p class="realisation__description">Installation complète sur hangar 500m²</p>
-                    </div>
-                </div>
-
-                <div class="realisation__card">
-                    <div class="realisation__image">
-                        <div class="realisation__placeholder">
-                            <span class="placeholder__icon">💧</span>
-                        </div>
-                    </div>
-                    <div class="realisation__content">
-                        <h3 class="realisation__title">Zinguerie Complète</h3>
-                        <p class="realisation__location">Louviers - Copropriété</p>
-                        <p class="realisation__description">Gouttières zinc et descentes EP sur 4 immeubles</p>
-                    </div>
-                </div>
-
-                <div class="realisation__card">
-                    <div class="realisation__image">
-                        <div class="realisation__placeholder">
-                            <span class="placeholder__icon">🪟</span>
-                        </div>
-                    </div>
-                    <div class="realisation__content">
-                        <h3 class="realisation__title">Velux et Combles</h3>
-                        <p class="realisation__location">Bernay - Rénovation</p>
-                        <p class="realisation__description">6 fenêtres de toit avec isolation complète</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about section" id="apropos">
-        <div class="container">
-            <div class="about__grid">
-                <div class="about__content">
-                    <span class="section__subtitle">Notre Histoire</span>
-                    <h2 class="section__title">Duval Couverture, votre partenaire de confiance</h2>
-                    <p class="about__text">
-                        Depuis 1995, Duval Couverture met son savoir-faire au service des particuliers et professionnels dans tout le département de l'Eure (27).
-                    </p>
-                    <p class="about__text">
-                        Notre entreprise familiale s'est bâtie une solide réputation grâce à la qualité de nos interventions, notre professionnalisme et notre respect des délais.
+            <div class="grid grid-2" style="align-items: center; gap: 4rem;">
+                <div>
+                    <p style="color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem;">Pourquoi Nous Choisir</p>
+                    <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">Une Entreprise de Confiance</h2>
+                    <p style="font-size: 1.125rem; color: var(--gray-600); margin-bottom: 2rem; line-height: 1.8;">
+                        Depuis 1995, Duval Couverture met son savoir-faire au service des particuliers et professionnels
+                        dans tout le département de l'Eure.
                     </p>
 
-                    <div class="about__stats">
-                        <div class="stat__item">
-                            <div class="stat__number">25+</div>
-                            <div class="stat__label">Années d'expérience</div>
-                        </div>
-                        <div class="stat__item">
-                            <div class="stat__number">500+</div>
-                            <div class="stat__label">Chantiers réalisés</div>
-                        </div>
-                        <div class="stat__item">
-                            <div class="stat__number">100%</div>
-                            <div class="stat__label">Clients satisfaits</div>
-                        </div>
-                    </div>
-
-                    <div class="about__certifications">
-                        <h3>Nos Garanties</h3>
-                        <ul class="certifications__list">
-                            <li>✓ Garantie décennale</li>
-                            <li>✓ Assurance responsabilité civile</li>
-                            <li>✓ Qualification RGE (Reconnu Garant de l'Environnement)</li>
-                            <li>✓ Artisan certifié</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="about__image">
-                    <div class="about__placeholder">
-                        <span class="placeholder__text">Expert en couverture depuis 1995</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact section section--dark" id="contact">
-        <div class="container">
-            <div class="section__header">
-                <span class="section__subtitle">Contactez-nous</span>
-                <h2 class="section__title">Devis Gratuit</h2>
-                <p class="section__description">
-                    Besoin d'un professionnel ? Contactez-nous pour un devis gratuit et sans engagement
-                </p>
-            </div>
-
-            <div class="contact__grid">
-                <div class="contact__info">
-                    <div class="contact__card">
-                        <div class="contact__icon">📞</div>
-                        <h3>Téléphone</h3>
-                        <p><a href="tel:+33234567890">02 34 56 78 90</a></p>
-                        <p class="contact__note">Lun-Ven: 8h-18h | Sam: 9h-12h</p>
-                    </div>
-
-                    <div class="contact__card">
-                        <div class="contact__icon">📧</div>
-                        <h3>Email</h3>
-                        <p><a href="mailto:contact@duval-couverture27.fr">contact@duval-couverture27.fr</a></p>
-                        <p class="contact__note">Réponse sous 24h</p>
-                    </div>
-
-                    <div class="contact__card">
-                        <div class="contact__icon">📍</div>
-                        <h3>Zone d'intervention</h3>
-                        <p>Tout le département de l'Eure (27)</p>
-                        <p class="contact__note">Évreux, Vernon, Louviers, Bernay...</p>
-                    </div>
-
-                    <div class="contact__urgence">
-                        <h3>⚡ Urgence ?</h3>
-                        <p>Service de dépannage disponible 7j/7</p>
-                        <a href="tel:+33612345678" class="btn btn--urgence">06 12 34 56 78</a>
-                    </div>
-                </div>
-
-                <div class="contact__form">
-                    <form id="contact-form" class="form">
-                        <div class="form__group">
-                            <label for="name" class="form__label">Nom complet *</label>
-                            <input type="text" id="name" name="name" class="form__input" required>
-                        </div>
-
-                        <div class="form__row">
-                            <div class="form__group">
-                                <label for="email" class="form__label">Email *</label>
-                                <input type="email" id="email" name="email" class="form__input" required>
-                            </div>
-
-                            <div class="form__group">
-                                <label for="phone" class="form__label">Téléphone *</label>
-                                <input type="tel" id="phone" name="phone" class="form__input" required>
+                    <div style="display: grid; gap: 1.5rem;">
+                        <div style="display: flex; gap: 1rem;">
+                            <div style="width: 50px; height: 50px; background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: white; font-size: 1.5rem;">✓</div>
+                            <div>
+                                <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Garantie Décennale</h3>
+                                <p style="color: var(--gray-600);">Tous nos travaux sont couverts par une garantie décennale et une assurance RC Pro.</p>
                             </div>
                         </div>
 
-                        <div class="form__group">
-                            <label for="service" class="form__label">Type de service *</label>
-                            <select id="service" name="service" class="form__input" required>
-                                <option value="">Sélectionnez un service</option>
-                                <option value="couverture">Couverture</option>
-                                <option value="zinguerie">Zinguerie</option>
-                                <option value="renovation">Rénovation</option>
-                                <option value="velux">Fenêtres de toit</option>
-                                <option value="urgence">Dépannage urgent</option>
-                                <option value="autre">Autre</option>
-                            </select>
+                        <div style="display: flex; gap: 1rem;">
+                            <div style="width: 50px; height: 50px; background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: white; font-size: 1.5rem;">✓</div>
+                            <div>
+                                <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Artisan Certifié RGE</h3>
+                                <p style="color: var(--gray-600);">Certification RGE (Reconnu Garant de l'Environnement) pour vos aides et subventions.</p>
+                            </div>
                         </div>
 
-                        <div class="form__group">
-                            <label for="message" class="form__label">Message *</label>
-                            <textarea id="message" name="message" class="form__input form__textarea" rows="5" required></textarea>
+                        <div style="display: flex; gap: 1rem;">
+                            <div style="width: 50px; height: 50px; background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: white; font-size: 1.5rem;">✓</div>
+                            <div>
+                                <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Intervention Rapide</h3>
+                                <p style="color: var(--gray-600);">Service de dépannage disponible 7j/7 pour les urgences et fuites.</p>
+                            </div>
                         </div>
-
-                        <div class="form__group form__checkbox">
-                            <input type="checkbox" id="rgpd" name="rgpd" required>
-                            <label for="rgpd">J'accepte que mes données soient utilisées pour me recontacter *</label>
-                        </div>
-
-                        <button type="submit" class="btn btn--primary btn--full">
-                            Envoyer ma demande
-                        </button>
-
-                        <p class="form__note">* Champs obligatoires</p>
-                    </form>
-
-                    <div id="form-success" class="form__message form__message--success" style="display: none;">
-                        <p>✓ Votre message a été envoyé avec succès ! Nous vous répondrons dans les plus brefs délais.</p>
                     </div>
 
-                    <div id="form-error" class="form__message form__message--error" style="display: none;">
-                        <p>✕ Une erreur s'est produite. Veuillez réessayer ou nous contacter par téléphone.</p>
+                    <div style="margin-top: 2rem;">
+                        <a href="a-propos.html" class="btn btn-primary">En Savoir Plus</a>
                     </div>
+                </div>
+
+                <div style="position: relative;">
+                    <div style="background: var(--gradient-primary); height: 500px; border-radius: 2rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; box-shadow: var(--shadow-2xl);">
+                        <div style="text-align: center;">
+                            <div style="font-size: 4rem; margin-bottom: 1rem;">🏆</div>
+                            <p style="font-size: 1.5rem; font-weight: 700;">Expert depuis<br>1995</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section" style="background: var(--gradient-dark); text-align: center; color: white;">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <h2 style="font-size: 3rem; color: white; margin-bottom: 1.5rem;">Besoin d'un Devis Gratuit ?</h2>
+                <p style="font-size: 1.25rem; color: var(--gray-300); margin-bottom: 2rem;">
+                    Contactez-nous dès aujourd'hui pour un devis personnalisé et sans engagement.
+                    Notre équipe est à votre écoute pour tous vos projets de couverture.
+                </p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="contact.html" class="btn btn-primary" style="font-size: 1.125rem; padding: 1.25rem 2.5rem;">Demander un Devis</a>
+                    <a href="tel:0234567890" class="btn btn-outline" style="font-size: 1.125rem; padding: 1.25rem 2.5rem;">📞 02 34 56 78 90</a>
                 </div>
             </div>
         </div>
@@ -405,61 +184,54 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer__grid">
-                <div class="footer__col">
-                    <h3 class="footer__title">DUVAL<span class="highlight">COUVERTURE</span></h3>
-                    <p class="footer__text">
+            <div class="footer-grid">
+                <div>
+                    <h3 class="footer-brand">DUVAL<span style="font-weight: 400;">COUVERTURE</span></h3>
+                    <p class="footer-description">
                         Votre expert en couverture et zinguerie dans l'Eure depuis 1995.
-                    </p>
-                    <p class="footer__text">
                         Qualité, professionnalisme et garantie décennale.
                     </p>
                 </div>
 
-                <div class="footer__col">
-                    <h4 class="footer__subtitle">Services</h4>
-                    <ul class="footer__links">
-                        <li><a href="#services">Couverture</a></li>
-                        <li><a href="#services">Zinguerie</a></li>
-                        <li><a href="#services">Rénovation</a></li>
-                        <li><a href="#services">Fenêtres de toit</a></li>
-                        <li><a href="#services">Dépannage</a></li>
+                <div>
+                    <h4 class="footer-title">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="couverture.html">Couverture</a></li>
+                        <li><a href="zinguerie.html">Zinguerie</a></li>
+                        <li><a href="renovation.html">Rénovation</a></li>
+                        <li><a href="velux.html">Fenêtres de toit</a></li>
                     </ul>
                 </div>
 
-                <div class="footer__col">
-                    <h4 class="footer__subtitle">Entreprise</h4>
-                    <ul class="footer__links">
-                        <li><a href="#apropos">À propos</a></li>
-                        <li><a href="#realisations">Nos réalisations</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                        <li><a href="#contact">Devis gratuit</a></li>
+                <div>
+                    <h4 class="footer-title">Entreprise</h4>
+                    <ul class="footer-links">
+                        <li><a href="a-propos.html">À propos</a></li>
+                        <li><a href="services.html">Nos services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
 
-                <div class="footer__col">
-                    <h4 class="footer__subtitle">Contact</h4>
-                    <ul class="footer__contact">
-                        <li>📞 <a href="tel:+33234567890">02 34 56 78 90</a></li>
+                <div>
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-links">
+                        <li>📞 <a href="tel:0234567890">02 34 56 78 90</a></li>
                         <li>📧 <a href="mailto:contact@duval-couverture27.fr">contact@duval-couverture27.fr</a></li>
                         <li>📍 Eure (27)</li>
                     </ul>
                 </div>
             </div>
 
-            <div class="footer__bottom">
+            <div class="footer-bottom">
                 <p>&copy; 2024 Duval Couverture. Tous droits réservés.</p>
-                <div class="footer__legal">
-                    <a href="#mentions">Mentions légales</a>
-                    <span>•</span>
-                    <a href="#rgpd">Politique de confidentialité</a>
+                <div class="social-links">
+                    <a href="#" class="social-link">f</a>
+                    <a href="#" class="social-link">in</a>
+                    <a href="#" class="social-link">✉</a>
                 </div>
             </div>
         </div>
     </footer>
-
-    <!-- Back to top button -->
-    <a href="#accueil" class="back-to-top" id="back-to-top">↑</a>
 
     <script src="script.js"></script>
 </body>

@@ -1,105 +1,73 @@
-// ========================================
+// ==========================================
+// DUVAL COUVERTURE - JavaScript
+// Modern & Interactive
+// ==========================================
+
+'use strict';
+
+// ==========================================
 // MOBILE MENU TOGGLE
-// ========================================
+// ==========================================
 
 const navMenu = document.getElementById('nav-menu');
 const navToggle = document.getElementById('nav-toggle');
-const navClose = document.getElementById('nav-close');
-const navLinks = document.querySelectorAll('.nav__link');
+const navLinks = document.querySelectorAll('.nav-link');
 
-// Show menu
 if (navToggle) {
     navToggle.addEventListener('click', () => {
-        navMenu.classList.add('show');
-    });
-}
-
-// Hide menu
-if (navClose) {
-    navClose.addEventListener('click', () => {
-        navMenu.classList.remove('show');
+        navMenu.classList.toggle('active');
     });
 }
 
 // Close menu when clicking on nav links
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
-        navMenu.classList.remove('show');
+        navMenu.classList.remove('active');
     });
 });
 
-// ========================================
-// ACTIVE NAVIGATION LINK
-// ========================================
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+        navMenu.classList.remove('active');
+    }
+});
 
-const sections = document.querySelectorAll('section[id]');
+// ==========================================
+// NAVBAR SCROLL EFFECT
+// ==========================================
 
-function scrollActive() {
-    const scrollY = window.pageYOffset;
+const navbar = document.getElementById('navbar');
 
-    sections.forEach(current => {
-        const sectionHeight = current.offsetHeight;
-        const sectionTop = current.offsetTop - 100;
-        const sectionId = current.getAttribute('id');
-        const navLink = document.querySelector(`.nav__link[href="#${sectionId}"]`);
-
-        if (navLink) {
-            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                navLink.classList.add('active');
-            } else {
-                navLink.classList.remove('active');
-            }
-        }
-    });
-}
-
-window.addEventListener('scroll', scrollActive);
-
-// ========================================
-// HEADER SCROLL EFFECT
-// ========================================
-
-const header = document.getElementById('header');
-
-function scrollHeader() {
-    if (window.scrollY >= 50) {
-        header.classList.add('scrolled');
+function handleScroll() {
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
     } else {
-        header.classList.remove('scrolled');
+        navbar.classList.remove('scrolled');
     }
 }
 
-window.addEventListener('scroll', scrollHeader);
+window.addEventListener('scroll', handleScroll);
 
-// ========================================
-// BACK TO TOP BUTTON
-// ========================================
-
-const backToTop = document.getElementById('back-to-top');
-
-function scrollToTop() {
-    const scrollY = window.pageYOffset;
-
-    if (scrollY >= 400) {
-        backToTop.classList.add('visible');
-    } else {
-        backToTop.classList.remove('visible');
-    }
-}
-
-window.addEventListener('scroll', scrollToTop);
-
-// ========================================
-// SMOOTH SCROLLING FOR ANCHOR LINKS
-// ========================================
+// ==========================================
+// SMOOTH SCROLL
+// ==========================================
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const href = this.getAttribute('href');
+
+        // Skip if href is just "#"
+        if (href === '#') {
+            e.preventDefault();
+            return;
+        }
+
+        const target = document.querySelector(href);
 
         if (target) {
-            const headerHeight = header.offsetHeight;
+            e.preventDefault();
+            const headerHeight = navbar ? navbar.offsetHeight : 80;
             const targetPosition = target.offsetTop - headerHeight;
 
             window.scrollTo({
@@ -110,9 +78,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ========================================
+// ==========================================
 // CONTACT FORM HANDLING
-// ========================================
+// ==========================================
 
 const contactForm = document.getElementById('contact-form');
 const formSuccess = document.getElementById('form-success');
@@ -128,8 +96,6 @@ if (contactForm) {
 
         // Validate form
         if (validateForm(data)) {
-            // Simulate form submission
-            // In production, you would send this to a server
             submitForm(data);
         } else {
             showMessage('error');
@@ -151,7 +117,7 @@ function validateForm(data) {
 
     // Validate phone format (French phone number)
     const phoneRegex = /^(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$/;
-    if (!phoneRegex.test(data.phone)) {
+    if (!phoneRegex.test(data.phone.replace(/\s/g, ''))) {
         return false;
     }
 
@@ -164,15 +130,16 @@ function validateForm(data) {
 }
 
 function submitForm(data) {
-    // Show loading state
     const submitButton = contactForm.querySelector('button[type="submit"]');
     const originalText = submitButton.textContent;
+
+    // Show loading state
     submitButton.textContent = 'Envoi en cours...';
     submitButton.disabled = true;
 
-    // Simulate API call
+    // Simulate API call (replace with actual backend endpoint)
     setTimeout(() => {
-        // In production, replace this with actual API call
+        // In production, send data to server
         console.log('Form data:', data);
 
         // Reset form
@@ -194,59 +161,35 @@ function submitForm(data) {
 
 function showMessage(type) {
     if (type === 'success') {
-        formSuccess.style.display = 'block';
-        formError.style.display = 'none';
-
-        // Scroll to message
-        formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        if (formSuccess) {
+            formSuccess.style.display = 'block';
+            formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+        if (formError) {
+            formError.style.display = 'none';
+        }
     } else {
-        formSuccess.style.display = 'none';
-        formError.style.display = 'block';
-
-        // Scroll to message
-        formError.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        if (formError) {
+            formError.style.display = 'block';
+            formError.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+        if (formSuccess) {
+            formSuccess.style.display = 'none';
+        }
     }
 }
 
 function hideMessage(type) {
-    if (type === 'success') {
+    if (type === 'success' && formSuccess) {
         formSuccess.style.display = 'none';
-    } else {
+    } else if (formError) {
         formError.style.display = 'none';
     }
 }
 
-// ========================================
-// SCROLL REVEAL ANIMATIONS
-// ========================================
-
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver(function(entries) {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
-
-// Observe elements for animation
-const animateElements = document.querySelectorAll('.service__card, .realisation__card, .stat__item, .contact__card');
-
-animateElements.forEach(element => {
-    element.style.opacity = '0';
-    element.style.transform = 'translateY(30px)';
-    element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(element);
-});
-
-// ========================================
+// ==========================================
 // PHONE NUMBER FORMATTING
-// ========================================
+// ==========================================
 
 const phoneInput = document.getElementById('phone');
 
@@ -263,11 +206,11 @@ if (phoneInput) {
     });
 }
 
-// ========================================
-// FORM FIELD VALIDATION FEEDBACK
-// ========================================
+// ==========================================
+// FORM VALIDATION FEEDBACK
+// ==========================================
 
-const formInputs = document.querySelectorAll('.form__input');
+const formInputs = document.querySelectorAll('.form-input, .form-textarea, .form-select');
 
 formInputs.forEach(input => {
     input.addEventListener('blur', function() {
@@ -283,31 +226,72 @@ formInputs.forEach(input => {
     });
 
     input.addEventListener('focus', function() {
-        this.style.borderColor = '#f59e0b';
+        this.style.borderColor = '#6366f1';
     });
 });
 
-// ========================================
+// ==========================================
+// SCROLL ANIMATIONS
+// ==========================================
+
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, observerOptions);
+
+// Observe cards for animation
+const animateElements = document.querySelectorAll('.card, .stat-item');
+
+animateElements.forEach(element => {
+    element.style.opacity = '0';
+    element.style.transform = 'translateY(30px)';
+    element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(element);
+});
+
+// ==========================================
+// ACTIVE NAV LINK
+// ==========================================
+
+function setActiveNavLink() {
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+
+    navLinks.forEach(link => {
+        const linkHref = link.getAttribute('href');
+
+        if (linkHref === currentPage ||
+            (currentPage === '' && linkHref === 'index.html') ||
+            (currentPage === 'index.html' && linkHref === 'index.html')) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
+}
+
+// Set active link on page load
+setActiveNavLink();
+
+// ==========================================
 // PREVENT FORM RESUBMISSION
-// ========================================
+// ==========================================
 
 if (window.history.replaceState) {
     window.history.replaceState(null, null, window.location.href);
 }
 
-// ========================================
-// LOADING OPTIMIZATION
-// ========================================
-
-// Lazy load images when implemented
-document.addEventListener('DOMContentLoaded', function() {
-    // Add loaded class to body for CSS animations
-    document.body.classList.add('loaded');
-});
-
-// ========================================
-// PERFORMANCE: Debounce scroll events
-// ========================================
+// ==========================================
+// PERFORMANCE: Debounce
+// ==========================================
 
 function debounce(func, wait = 10, immediate = true) {
     let timeout;
@@ -325,50 +309,31 @@ function debounce(func, wait = 10, immediate = true) {
     };
 }
 
-// Apply debounce to scroll events
-window.addEventListener('scroll', debounce(function() {
-    scrollActive();
-    scrollHeader();
-    scrollToTop();
-}, 10));
+// Apply debounce to scroll event
+window.addEventListener('scroll', debounce(handleScroll, 10));
 
-// ========================================
-// ACCESSIBILITY: Focus trap for mobile menu
-// ========================================
+// ==========================================
+// ACCESSIBILITY: ESC key to close menu
+// ==========================================
 
-function trapFocus(element) {
-    const focusableElements = element.querySelectorAll(
-        'a[href], button, textarea, input, select'
-    );
-    const firstFocusable = focusableElements[0];
-    const lastFocusable = focusableElements[focusableElements.length - 1];
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+        navMenu.classList.remove('active');
+    }
+});
 
-    element.addEventListener('keydown', function(e) {
-        const isTabPressed = e.key === 'Tab';
+// ==========================================
+// PAGE LOAD ANIMATIONS
+// ==========================================
 
-        if (!isTabPressed) return;
+window.addEventListener('load', () => {
+    document.body.classList.add('loaded');
+});
 
-        if (e.shiftKey) {
-            if (document.activeElement === firstFocusable) {
-                lastFocusable.focus();
-                e.preventDefault();
-            }
-        } else {
-            if (document.activeElement === lastFocusable) {
-                firstFocusable.focus();
-                e.preventDefault();
-            }
-        }
-    });
-}
+// ==========================================
+// CONSOLE MESSAGE
+// ==========================================
 
-if (navMenu) {
-    trapFocus(navMenu);
-}
-
-// ========================================
-// CONSOLE LOG (Remove in production)
-// ========================================
-
-console.log('%c🏠 Duval Couverture 27', 'font-size: 20px; font-weight: bold; color: #f59e0b;');
-console.log('%cSite web développé avec ❤️', 'font-size: 14px; color: #1e3a8a;');
+console.log('%c🏠 Duval Couverture 27', 'font-size: 20px; font-weight: bold; color: #6366f1;');
+console.log('%cSite web moderne et professionnel', 'font-size: 14px; color: #4b5563;');
+console.log('%cDéveloppé avec soin ✨', 'font-size: 12px; color: #9ca3af;');
