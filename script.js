@@ -331,9 +331,52 @@ window.addEventListener('load', () => {
 });
 
 // ==========================================
+// FAQ ACCORDION
+// ==========================================
+
+const faqItems = document.querySelectorAll('.faq-item');
+
+faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+
+    question.addEventListener('click', () => {
+        // Close other items
+        faqItems.forEach(otherItem => {
+            if (otherItem !== item) {
+                otherItem.classList.remove('active');
+            }
+        });
+
+        // Toggle current item
+        item.classList.toggle('active');
+    });
+});
+
+// ==========================================
+// SCROLL REVEAL ANIMATION
+// ==========================================
+
+function revealOnScroll() {
+    const reveals = document.querySelectorAll('.reveal');
+
+    reveals.forEach(element => {
+        const windowHeight = window.innerHeight;
+        const elementTop = element.getBoundingClientRect().top;
+        const elementVisible = 150;
+
+        if (elementTop < windowHeight - elementVisible) {
+            element.classList.add('active');
+        }
+    });
+}
+
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
+
+// ==========================================
 // CONSOLE MESSAGE
 // ==========================================
 
-console.log('%c🏠 Duval Couverture 27', 'font-size: 20px; font-weight: bold; color: #6366f1;');
+console.log('%c🏠 Duval Couverture 27', 'font-size: 20px; font-weight: bold; color: #0B7EB5;');
 console.log('%cSite web moderne et professionnel', 'font-size: 14px; color: #4b5563;');
 console.log('%cDéveloppé avec soin ✨', 'font-size: 12px; color: #9ca3af;');
